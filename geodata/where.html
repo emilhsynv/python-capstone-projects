@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>A Map of Information</title>
+
+    <!-- Include the Google Maps API with the specified API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj1dOJUMYlO8J-T0SxiPNF8kDhBuy3exw"></script>
+    <!-- Include the 'where.js' script -->
+    <script src="where.js"></script>
+
+    <script>
+        // Function to initialize the Google Map
+        function initialize() {
+            // Display an alert message for marker title information
+            alert("To see the title of a marker, hover over the marker but don't click.");
+
+            // Define the initial map center
+            var myLatlng = new google.maps.LatLng(37.39361, -122.099263);
+
+            // Set the map options
+            var mapOptions = {
+                zoom: 3,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            // Create a new Google Map with the specified options
+            var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+            // Initialize variables for markers
+            var markers = [];
+
+            // Loop through the data to create markers
+            for (var i = 0; i < myData.length; i++) {
+                var row = myData[i];
+                window.console && console.log(row);
+                var newLatlng = new google.maps.LatLng(row[0], row[1]);
+
+                // Create a new marker for each data point
+                var marker = new google.maps.Marker({
+                    position: newLatlng,
+                    map: map,
+                    title: row[2]
+                });
+
+                // Add the marker to the markers array
+                markers.push(marker);
+            }
+
+            // Console log the markers array
+            console.log(markers);
+
+            // New options for MarkerClusterer function to display markers
+            var options = {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            };
+
+            // Create a MarkerClusterer to cluster markers on the map
+            var markerCluster = new MarkerClusterer(map, markers, options);
+        }
+
+        // Ensure initialize is only called after the page is fully loaded
+        window.addEventListener('load', initialize);
+    </script>
+</head>
+<body>
+    <!-- Display the map canvas with a specified height -->
+    <div id="map_canvas" style="height: 500px"></div>
+
+    <!-- Information about the map -->
+    <p><b>About this Map</b></p>
+    <p>This is a cool map from <a href="https://www.py4e.com">www.py4e.com</a>.</p>
+</body>
+</html>
