@@ -24,4 +24,5 @@ A simple Python script that processes **user-course-role** data from JSON and st
    rm rosterdb.sqlite  # Mac/Linux
    del rosterdb.sqlite  # Windows
 
+
 ✅ Great for learning Python, SQLite, and relational data handling! 🚀
