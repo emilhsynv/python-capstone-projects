@@ -8,18 +8,20 @@ A simple Python script that processes **user-course-role** data from JSON and st
 ✔️ Loads and updates data dynamically  
 
 ## 🚀 How to Run  
-1️⃣ **Ensure Python & SQLite3 are installed**  
-2️⃣ **Prepare JSON Data** (`roster_data.json`):  
-```json
-[
-["Alice", "Python101", 1],
-["Bob", "Python101", 0]
-]
-3️⃣ **Run the script:** python rosterdb.py
-4️⃣ Check rosterdb.sqlite in DB Browser for SQLite.
-5️⃣ Reset database:
-rm rosterdb.sqlite  # Mac/Linux  
-del rosterdb.sqlite  # Windows  
+
+1. **Ensure Python & SQLite3 are installed**  
+2. **Prepare JSON Data** (`roster_data.json`):
+   ```json
+   [
+     ["Alice", "Python101", 1],
+     ["Bob", "Python101", 0]
+   ]
+
+3. **Run the script**
+(Default file: roster_data.json)
+4. Check rosterdb.sqlite in DB Browser for SQLite.
+5. Reset database:
+   rm rosterdb.sqlite  # Mac/Linux
+   del rosterdb.sqlite  # Windows
 
 ✅ Great for learning Python, SQLite, and relational data handling! 🚀
-
